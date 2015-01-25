@@ -1,7 +1,20 @@
-t_glob		*get_glob()
-{
-	t_glob		glob;
+#include "../include/ft_printf.h"
 
-	glob = malloc(sizeof(t_glob));
+t_glob		*get_glob(int mode)
+{
+	static t_glob		glob;
+	static int			init = 0;
+
+	if (!init && !mode)
+	{
+		glob.left_i = 0;
+		glob.right_i = 0;
+		glob.list = NULL;
+		init = 1;
+	}
+	else if (mode)
+	{
+		init = 0;
+	}
 	return (&glob);
 }
