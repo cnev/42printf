@@ -1,0 +1,25 @@
+PRINTF
+
+main:
+
+	unsigned int chaine_pos_gauche;
+	unsigned int chaine_pos_droite;
+	liste segments_output_chaine;
+
+	tant que chaine_pos_gauche ne pointe pas sur fin de chaine:
+			chaine_pos_droite = chaine_pos_gauche;
+			tant que chaine_pos_droite ne pointe pas sur caractere special:
+					chaine_pos_droite++;
+			push le segment actuel
+			si chaine_pos_droite pointe sur fin de chaine:
+				break ;
+			sinon
+				traiter le caractere special
+
+	afficher la liste
+	fin
+
+traiter_caractere()
+{
+
+}
