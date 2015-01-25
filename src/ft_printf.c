@@ -3,16 +3,21 @@
 
 int				ft_printf(const char* str, ...)
 {
-	unsigned int	left_i;
-	unsigned int	right_i;
-	t_list			*list;
+	t_glob			*glob;
 
-	left_i = 0;
-	right_i = 0;
-	list = NULL;
-
+	glob = get_glob();
 	while (str[left_i])
 	{
-		if (r)
+		right_i = left_i;
+		while (str[right_i] && str[right_i] != '%')
+			right_i++;
+		if (!str[right_i])
+			list_pushback(&list, ft_strdup(str + left_i));
+		else
+		{
+			str[right_i] = '\0';
+			list_pushback(&list, ft_strdup(str + left_i));
+			process_format(str);
+		}
 	}
 }

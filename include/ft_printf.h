@@ -1,5 +1,9 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# define LEFT_I		(get_glob())->left_i
+# define RIGHT_I	(get_glob())->right_i
+# define OUTPUT		(get_glob())->list
+# define VARS		(get_glob())->vars
 
 typedef struct		s_glob
 {
