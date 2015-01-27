@@ -24,7 +24,14 @@ typedef struct		s_info
 	int				flag_space;
 	int				width;
 	int				precision;
+	char			format[4];
 }					t_info;
+
+typedef struct		s_outputft
+{
+	char			*format;
+	char			*f(void);
+}					t_outputft;
 
 /*
 ** ft_printf.c
