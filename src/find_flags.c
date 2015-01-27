@@ -1,15 +1,15 @@
-int					is_flag(char c, t_info *info)
+static int			is_flag(char c, t_info *info)
 {
 	if (c == ' ')
-		(*info)->flag_space = 1;
+		info->flag_space += 1;
 	else if (c == '-')
-		(*info)->flag_minus = 1;
+		info->flag_minus += 1;
 	else if (c == '+')
-		(*info)->flag_plus = 1;
+		info->flag_plus += 1;
 	else if (c == '#')
-		(*info)->flag_sharp = 1;
+		info->flag_sharp += 1;
 	else if (c == '0')
-		(*info)->flag_zero = 1;
+		info->flag_zero += 1;
 	else
 		return (FALSE);
 	return (TRUE);
