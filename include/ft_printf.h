@@ -36,7 +36,6 @@ int					ft_printf(const char* str, ...);
 */
 void				process_format(const char *str);
 
-
 /*
 ** flags.c
 */
@@ -65,6 +64,6 @@ void				find_format(const char *str, t_info *info);
 /*
 ** output_main.c
 */
-char				*build_output(const char *str, t_info *info);
+char				*build_output(t_info *info);
 
 #endif
