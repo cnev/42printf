@@ -27,6 +27,11 @@ typedef struct		s_info
 	char			format[4];
 }					t_info;
 
+struct
+type;
+void*
+
+
 typedef struct		s_outputft
 {
 	char			*format;
