@@ -23,3 +23,15 @@ traiter_caractere()
 {
 
 }
+
+ORDRES DE MISSION DE VICTOR:
+
+	ajouter la structure t_data dans le .h (data de liste d'output):
+		int is_wchar;
+		char *str;
+		wchar_t *w_str;
+
+	creer le fichier data.c avec les fonctions suivantes:
+		t_data	*create_data(char *str, wchar_t *w_str);
+
+	ecrire des tests pour la detection des formats (variables.c: process_format())
