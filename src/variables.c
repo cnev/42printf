@@ -25,3 +25,4 @@ void			process_format(const char *str)
 	tmp = build_output(&info);
 	list_pushback(&(OUTPUT), tmp);
 }
+

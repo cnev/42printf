@@ -7,10 +7,17 @@ t_outputft			g_ft[40] = {
 	{"p", build_p},
 
 	/* output_2.c */
+	{"d", build_d},
+	{"o", build_o},
+	{"u", build_u},
+	{"x", build_x},
+
+	/* output_2.c */
 	{"D", build_maj_d},
 	{"O", build_maj_o},
 	{"U", build_maj_u},
 	{"X", build_maj_x},
+
 
 	/* output_hh.c */
 	{"hhd", build_hhd},
