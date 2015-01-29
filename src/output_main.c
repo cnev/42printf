@@ -76,9 +76,22 @@ static char		*select_output(t_info *info)
 	return (NULL);
 }
 
+char			*modify_output(char *str, t_info *info)
+{
+	char			*tmp;
+
+	tmp = do_precision(str, info);
+	tmp = do_sharp(tmp, info);
+	tmp = do_sign(tmp, info);
+	tmp = do_padding(tmp, info);
+	return (tmp);
+}
+
 char			*build_output(t_info *info)
 {
 	char			*var;
 
-
+	if (!(var = select_output))
+		return (NULL);
+	return (modify_output(var, info));
 }

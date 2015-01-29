@@ -36,7 +36,7 @@ t_data			*build_maj_c(void)
 
 	if (!(tmp = (wchar_t *)malloc(sizeof(wchar_t) * 2)))
 		return (NULL);
-	tmp[0] = va_arg(VARS, wchar_t);
+	tmp[0] = va_arg(VARS, wint_t);
 	tmp[1] = '\0';
 	return (create_data(NULL, tmp));
 }

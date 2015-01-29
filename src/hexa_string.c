@@ -31,6 +31,7 @@ static int		int_len(unsigned int val)
 	}
 	return (i);
 }
+
 static char		hex_char(unsigned int val, int is_maj)
 {
 	const char		table[] = "0123456789abcdef";
@@ -66,6 +67,8 @@ int main(int ac, char **av)
 {
 	printf("MAX INT : %s\n", hexa_string(4294967295, 0));
 	printf("really is :%x\n", 4294967295);
+	printf("MAX INT : %s\n", hexa_string(4294967295, 1));
+	printf("really is :%X\n", 4294967295);
 	printf("zero : %s\n", hexa_string(20, 1));
 	printf("really is :%X\n", 20);
 	printf("seven : %s\n", hexa_string(100, 1));
