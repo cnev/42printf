@@ -58,6 +58,21 @@ t_data				*create_data(char *str, wchar_t *w_str);
 int					equals_zero(char *str);
 
 /*
+** field_width.c
+*/
+void				find_field_width(const char *str, t_info *info);
+
+/*
+** flags.c
+*/
+void				find_flags(const char *str, t_info *info);
+
+/*
+** is_format.c
+*/
+int					is_format(char *format, char *possibles);
+
+/*
 ** ft_itoa.c
 */
 char				*ft_itoa(int val);
@@ -73,28 +88,61 @@ int					ft_printf(const char* str, ...);
 char				*ft_strrev(char *str);
 
 /*
+** ft_uitoa_1.c
+*/
+char				*ft_uitoa(unsigned int val);
+
+/*
+** ft_uitoa_2.c
+*/
+char				*ft_uitoa_size_t(size_t val);
+
+/*
+** ft_uitoa_3.c
+*/
+char				*ft_uitoa_intmax_t(intmax_t val);
+
+/*
+** handle_padding.c
+*/
+char				*do_zero(char *str, t_info *info);
+char				*do_minus(char *str, t_info *info);
+char				*handle_sign(char *str, t_info *info);
+
+/*
+** handle_precision.c
+*/
+char				*do_precision(char *str, t_info *info);
+
+/*
+** handle_sharp.c
+*/
+char				*do_sharp(char *str, t_info *info);
+
+/*
+** handle_sign.c
+*/
+char				*handle_sign(char *str, t_info *info);
+
+/*
+** hexa_string_1.c
+*/
+char				*hexa_string(unsigned int val, int is_maj);
+
+/*
+** hexa_string_2.c
+*/
+char				*hexa_string_size_t(size_t val, int is_maj);
+
+/*
+** hexa_string_3.c
+*/
+char				*hexa_string_intmax_t(intmax_t val, int is_maj);
+
+/*
 ** is_format.c
 */
 int					is_format(char *format, char *possibles);
-/*
-** variables.c
-*/
-void				process_format(const char *str);
-
-/*
-** flags.c
-*/
-void				find_flags(const char *str, t_info *info);
-
-/*
-** field_width.c
-*/
-void				find_field_width(const char *str, t_info *info);
-
-/*
-** precision.c
-*/
-void				find_precision(const char *str, t_info *info);
 
 /*
 ** length_mod.c
@@ -102,19 +150,106 @@ void				find_precision(const char *str, t_info *info);
 void				find_length_mods(const char *str, t_info *info);
 
 /*
-** format.c
+** octal_strinf_1.c
 */
-void				find_format(const char *str, t_info *info);
+char				*octal_string(unsigned int val);
+
+/*
+** octal_strinf_2.c
+*/
+char				*octal_string_size_t(size_t val);
+
+/*
+** octal_strinf_3.c
+*/
+char				*octal_string_intmax_t(intmax_t val);
+
+/*
+** output_1.c
+*/
+t_data				*build_s(void);
+t_data				*build_maj_s(void);
+t_data				*build_c(void);
+t_data				*build_maj_c(void);
+t_data				*build_p(void);
+
+/*
+** output_2.c
+*/
+t_data				*build_d(void);
+t_data				*build_o(void);
+t_data				*build_u(void);
+t_data				*build_x(void);
+
+/*
+** output_3.c
+*/
+t_data				*build_maj_d(void);
+t_data				*build_maj_o(void);
+t_data				*build_maj_u(void);
+t_data				*build_maj_x(void);
+
+/*
+** output_h.c
+*/
+t_data				*build_hd(void);
+t_data				*build_ho(void);
+t_data				*build_hu(void);
+t_data				*build_hx(void);
+t_data				*build_h_maj_x(void);
+
+/*
+** output_hh.c
+*/
+t_data				*build_hhd(void);
+t_data				*build_hho(void);
+t_data				*build_hhu(void);
+t_data				*build_hhx(void);
+t_data				*build_hh_maj_x(void);
+
+/*
+** output_l.c
+*/
+t_data				*build_ld(void);
+t_data				*build_lo(void);
+t_data				*build_lu(void);
+t_data				*build_lx(void);
+t_data				*build_l_maj_x(void);
+
+/*
+** output_ll.c
+*/
+t_data				*build_lld(void);
+t_data				*build_llo(void);
+t_data				*build_llu(void);
+t_data				*build_llx(void);
+t_data				*build_ll_maj_x(void);
 
 /*
 ** output_main.c
 */
+char				*modify_output(char *str, t_info *info);
 char				*build_output(t_info *info);
+
+/*
+** precision.c
+*/
+void				find_precision(const char *str, t_info *info);
+
+/*
+** printing.c
+*/
+void				print_output(t_list *output);
 
 /*
 ** singleton.c
 */
 t_glob				*get_glob(int mode);
+
+/*
+** variables.c
+*/
+void				process_format(const char *str);
 
 /*
 ** widechar.c
