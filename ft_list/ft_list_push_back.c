@@ -11,13 +11,16 @@
 /* ************************************************************************** */
 
 #include "ft_list.h"
-
-void			list_pushback(t_list **begin_list, void *data)
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h" /* YO NORM ERASE THOS*/
+void			list_pushback(t_list **begin_list, t_data *data)
 {
 	t_list			*tmp;
 
 	if (!(*begin_list))
+	{
 		*begin_list = ft_create_elem(data);
+	}
 	else
 	{
 		tmp = *begin_list;

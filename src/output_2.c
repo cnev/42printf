@@ -1,4 +1,5 @@
 #include "../include/ft_printf.h"
+#include "../libft/includes/libft.h" /* YO NORM ERASE THOS*/
 
 t_data			*build_d(void)
 {

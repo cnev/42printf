@@ -8,7 +8,19 @@
 # define FALSE		0
 # include <wchar.h>
 # include <stdint.h>
-# include "../ft_list/ft_list.h"
+
+typedef struct		s_data
+{
+	int				is_wchar;
+	char			*str;
+	wchar_t			*w_str;
+}					t_data;
+
+typedef struct		s_list
+{
+	struct s_list	*next;
+	t_data			*data;
+}					t_list;
 
 typedef struct		s_glob
 {
@@ -30,18 +42,15 @@ typedef struct		s_info
 	char			format[4];
 }					t_info;
 
-typedef struct		s_data
-{
-	int				is_wchar;
-	char			*str;
-	wchar_t			*w_str;
-}					t_data;
+
 
 typedef struct		s_outputft
 {
 	char			*format;
 	t_data			*(*f)(void);
 }					t_outputft;
+
+
 
 /*
 ** data.c
@@ -64,9 +73,9 @@ void				find_field_width(const char *str, t_info *info);
 void				find_flags(const char *str, t_info *info);
 
 /*
-** is_format.c
+** format.c
 */
-int					is_format(char *format, char *possibles);
+void				find_format(const char *str, t_info *info);
 
 /*
 ** ft_itoa.c
@@ -232,7 +241,7 @@ void				find_precision(const char *str, t_info *info);
 /*
 ** printing.c
 */
-void				print_output(t_list *output);
+int					print_output(t_list *output);
 
 /*
 ** singleton.c

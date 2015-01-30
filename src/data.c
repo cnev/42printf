@@ -6,6 +6,8 @@ t_data				*create_data(char *str, wchar_t *w_str)
 {
 	t_data				*data;
 
+	if (!(data = (t_data *)malloc(sizeof(t_data))))
+		return (NULL);
 	if (!str && w_str)
 	{
 		data->is_wchar = TRUE;

@@ -1,7 +1,7 @@
 #include "../include/ft_printf.h"
 #include "../libft/includes/libft.h"
 
-t_outputft			g_ft[40] = {
+t_outputft			g_ft1[40] = {
 	{"s", build_s},
 	{"S", build_maj_s},
 	{"c", build_c},
@@ -52,11 +52,16 @@ void				find_format(const char *str, t_info *info)
 {
 	int				i;
 
-	ft_strncpy(info->format, str + RIGHT_I, 3)
+	if (str[RIGHT_I] == '%')
+		RIGHT_I++;
 	i = -1;
-	while (g_ft[++i].f)
+	while (g_ft1[++i].f)
 	{
-		if (!ft_strcmp(g_ft[i].format, info->format))
-			RIGHT_I = ft_strlen(g_ft[i].format) + 1;
+		if (!ft_strncmp(g_ft1[i].format, str + RIGHT_I, ft_strlen(g_ft1[i].format)))
+		{
+			ft_strncpy(info->format, str + RIGHT_I, ft_strlen(g_ft1[i].format));
+			RIGHT_I += ft_strlen(g_ft1[i].format);
+		}
 	}
+
 }

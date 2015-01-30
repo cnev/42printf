@@ -13,11 +13,14 @@ int				ft_printf(const char* str, ...)
 	va_start(VARS, str);
 	while (tmp[LEFT_I])
 	{
-		RIGHT_I = LEFT_I;
+		LEFT_I = RIGHT_I;
 		while (tmp[RIGHT_I] && tmp[RIGHT_I] != '%')
 			RIGHT_I++;
 		if (!tmp[RIGHT_I])
+		{
 			list_pushback(&OUTPUT, create_data(ft_strdup(tmp + LEFT_I), NULL));
+			break ;
+		}
 		else
 		{
 			tmp[RIGHT_I] = '\0';
@@ -25,7 +28,7 @@ int				ft_printf(const char* str, ...)
 			process_format(tmp);
 		}
 	}
-	printed = 0;//print_output(OUTPUT);
+	printed = print_output(OUTPUT);
 	va_end(VARS);
 	//clear_output(&OUTPUT);
 	get_glob(1);

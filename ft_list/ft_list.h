@@ -12,14 +12,10 @@
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
+# include "../include/ft_printf.h"
 
-typedef struct		s_list
-{
-	struct s_list	*next;
-	void			*data;
-}					t_list;
 
-t_list			*ft_create_elem(void *data);
-void			list_pushback(t_list **begin_list, void *data);
+t_list			*ft_create_elem(t_data *data);
+void			list_pushback(t_list **begin_list, t_data *data);
 void			ft_list_clear(t_list **begin_list);
 #endif

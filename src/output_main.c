@@ -63,14 +63,10 @@ static t_data		*select_output(t_info *info)
 
 static t_data		*modify_output(t_data *data, t_info *info)
 {
-	char			*tmp;
-
-	tmp = do_precision(data->str, info);
-	tmp = do_sharp(tmp, info);
-	tmp = do_sign(tmp, info);
-	tmp = do_padding(tmp, info);
-	free(data->str);
-	data->str = tmp;
+	data->str = do_precision(data->str, info);
+	data->str = do_sharp(data->str, info);
+	data->str = do_sign(data->str, info);
+	data->str = do_padding(data->str, info);
 	return (data);
 }
 
@@ -80,5 +76,6 @@ t_data				*build_output(t_info *info)
 
 	if (!(var = select_output(info)))
 		return (NULL);
-	return (modify_output(var, info));
+	modify_output(var, info);
+	return (var);
 }
