@@ -7,7 +7,7 @@ static char			*do_zero(char *str, t_info *info)
 	char			*tmp;
 	int				i;
 
-	if (info->precision <= 0 || info->width < (int)ft_strlen(str))
+	if (info->width < (int)ft_strlen(str))
 		return (str);
 	if (!(tmp = (char *)malloc(sizeof(char) * (1 + info->width))))
 		return (NULL);
@@ -40,7 +40,7 @@ static char			*do_minus(char *str, t_info *info)
 
 char				*do_padding(char *str, t_info *info)
 {
-	if (info->flag_minus && is_format(info->format,  "dDoOuUxX"))
+	if (info->flag_minus)
 		return (do_minus(str, info));
 	if (info->flag_zero)
 		return (do_zero(str, info));
