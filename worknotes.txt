@@ -49,3 +49,10 @@ ORDRES DE MISSION DE VICTOR:
 		<<(variables.c: process_format())>>
 
 
+RESTE A FAIRE
+
+	importer libft
+	makefile
+	fonctions liste
+	detection du format
+	lengthmod j et z

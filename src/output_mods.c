@@ -4,9 +4,9 @@ char		*do_sharp(char *str, t_info *info)
 
 	if (!info->flag_sharp)
 		return (str);
-	if (FT_STRFIND(info->format, "o") && str[0] != '0')
+	if (FT_STRFIND(info->format, "o") && ONLY_ZEROES(str))
 	{
-		tmp = ft_prepend(str, "0");
+		tmp = ft_strjoin("0", str);
 		free(str);
 		return (tmp);
 	}
