@@ -40,3 +40,8 @@ t_data			*build_x(void)
 	tmp = hexa_string(val, FALSE);
 	return (create_data(tmp, NULL));
 }
+
+t_data			*build_pct(void)
+{
+	return (create_data(ft_strdup("%"), NULL));
+}

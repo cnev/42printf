@@ -42,8 +42,6 @@ typedef struct		s_info
 	char			format[4];
 }					t_info;
 
-
-
 typedef struct		s_outputft
 {
 	char			*format;
@@ -153,17 +151,17 @@ int					is_format(char *format, char *possibles);
 void				find_length_mods(const char *str, t_info *info);
 
 /*
-** octal_strinf_1.c
+** octal_string_1.c
 */
 char				*octal_string(unsigned int val);
 
 /*
-** octal_strinf_2.c
+** octal_string_2.c
 */
 char				*octal_string_size_t(size_t val);
 
 /*
-** octal_strinf_3.c
+** octal_string_3.c
 */
 char				*octal_string_intmax_t(intmax_t val);
 
@@ -183,6 +181,7 @@ t_data				*build_d(void);
 t_data				*build_o(void);
 t_data				*build_u(void);
 t_data				*build_x(void);
+t_data				*build_pct(void);
 
 /*
 ** output_3.c

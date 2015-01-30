@@ -1,6 +1,7 @@
 #include "../include/ft_printf.h"
 #include "../libft/includes/libft.h"
 #include <wchar.h>
+#include <stdint.h>
 
 t_data			*build_s(void)
 {
@@ -47,5 +48,10 @@ t_data			*build_maj_c(void)
 
 t_data			*build_p(void)
 {
+	void			*val;
+	char			*tmp;
+
+	val = va_arg(VARS, void *);
+	tmp = hexa_string_intmax_t((intmax_t)val, TRUE);
 	return (create_data(NULL, NULL));
 }

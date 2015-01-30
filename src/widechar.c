@@ -7,5 +7,5 @@ size_t			ft_wcstrlen(wchar_t *str)
 	i = 0;
 	while (str[i])
 		i++;
-	return (i);
+	return (i * sizeof(wchar_t));
 }

@@ -28,6 +28,12 @@ void scan_this(void)
 	}
 }
 
+static void		handle_specific_formats(t_info *info)
+{
+	if (is_format(info->format, "p"))
+		info->flag_sharp = TRUE;
+}
+
 void			process_format(const char *str)
 {
 	t_info			info;
