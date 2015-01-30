@@ -19,3 +19,6 @@ void				find_precision(const char *str, t_info *info)
 	}
 }
 
+"%dh", 30
+
+30h
