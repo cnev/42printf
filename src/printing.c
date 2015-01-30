@@ -1,3 +1,7 @@
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
+#include <unistd.h>
+
 void			print_output(t_list *output)
 {
 	t_data			*tmpdata;

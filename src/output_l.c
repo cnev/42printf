@@ -1,3 +1,4 @@
+#include "../include/ft_printf.h"
 
 t_data			*build_ld(void)
 {

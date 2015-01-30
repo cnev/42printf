@@ -15,11 +15,11 @@ int				ft_printf(const char* str, ...)
 		while (str[RIGHT_I] && str[RIGHT_I] != '%')
 			RIGHT_I++;
 		if (!str[RIGHT_I])
-			list_pushback(&list, ft_strdup(str + LEFT_I));
+			list_pushback(&list, create_data(ft_strdup(str + LEFT_I), NULL));
 		else
 		{
 			str[RIGHT_I] = '\0';
-			list_pushback(&list, ft_strdup(str + LEFT_I));
+			list_pushback(&list, create_data(ft_strdup(str + LEFT_I), NULL));
 			process_format(str);
 		}
 	}

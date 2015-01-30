@@ -9,7 +9,7 @@ SRC += $(SRCFOLDER)/field_width.c
 SRC += $(SRCFOLDER)/flags.c
 SRC += $(SRCFOLDER)/format.c
 SRC += $(SRCFOLDER)/ft_itoa.c
-
+SRC += $(SRCFOLDER)/ft_printf.c
 SRC += $(SRCFOLDER)/ft_uitoa_1.c
 SRC += $(SRCFOLDER)/ft_uitoa_2.c
 SRC += $(SRCFOLDER)/ft_uitoa_3.c
@@ -39,7 +39,9 @@ SRC += $(SRCFOLDER)/singleton.c
 SRC += $(SRCFOLDER)/variables.c
 SRC += $(SRCFOLDER)/widechar.c
 
-SRC += $(SRCFOLDER)/ft_printf.c
+SRC += ft_list/ft_create_elem.c
+SRC += ft_list/ft_list_push_back.c
+SRC += ft_list/ft_list_clear.c
 
 OBJ = $(SRC:.c=.o)
 LIB = libft/

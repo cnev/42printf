@@ -1,3 +1,5 @@
+#include "../include/ft_printf.h"
+
 t_outputft			g_ft[40] = {
 	{"s", build_s},
 	{"S", build_maj_s},

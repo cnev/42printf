@@ -32,7 +32,7 @@ char			*hexa_string_intmax_t(intmax_t val, int is_maj)
 
 
 	if (val == 0)
-		return (strdup("0"));
+		return (ft_strdup("0"));
 	if (!(tmp = (char *)malloc(sizeof(char) * (1 + int_len(val)))))
 		return (NULL);
 	i = 0;

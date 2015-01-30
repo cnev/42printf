@@ -12,7 +12,7 @@
 
 #include "ft_list.h"
 
-void			ft_list_push_back(t_list **begin_list, void *data)
+void			list_pushback(t_list **begin_list, void *data)
 {
 	t_list			*tmp;
 

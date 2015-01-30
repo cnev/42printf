@@ -1,3 +1,6 @@
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
+
 static void		init_info(t_info *info)
 {
 	info->flag_sharp = 0;

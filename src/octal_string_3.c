@@ -22,7 +22,7 @@ char			*octal_string_intmax_t(intmax_t val)
 	const char		table[] = "01234567";
 
 	if (val == 0)
-		return (strdup("0"));
+		return (ft_strdup("0"));
 	if (!(tmp = (char *)malloc(sizeof(char) * (1 + int_len(val)))))
 		return (NULL);
 	i = 0;
