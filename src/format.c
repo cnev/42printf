@@ -61,7 +61,7 @@ void				find_format(const char *str, t_info *info)
 		{
 			ft_strncpy(info->format, str + RIGHT_I, ft_strlen(g_ft1[i].format));
 			RIGHT_I += ft_strlen(g_ft1[i].format);
+			return ;
 		}
 	}
-
 }

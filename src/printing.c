@@ -10,6 +10,11 @@ int					print_output(t_list *output)
 	nb = 0;
 	while (output)
 	{
+		if (!output->data)
+		{
+			output = output->next;
+			continue ;
+		}
 		tmpdata = (t_data *)output->data;
 		if (tmpdata->is_wchar)
 		{

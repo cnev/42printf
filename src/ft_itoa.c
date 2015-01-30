@@ -34,6 +34,8 @@ static char		*build_str(int val, int is_neg)
 		tmp[i++] = val % 10 + '0';
 		val /= 10;
 	}
+	if (is_neg)
+		tmp[i++] = '-';
 	tmp[i] = '\0';
 	return (ft_strrev(tmp));
 }

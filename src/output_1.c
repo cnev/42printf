@@ -4,7 +4,12 @@
 
 t_data			*build_s(void)
 {
-	return (create_data(ft_strdup(va_arg(VARS, char *)), NULL));
+	char			*val;
+
+	val = va_arg(VARS, char *);
+	if (!val)
+		return (NULL);
+	return (create_data(ft_strdup(val), NULL));
 }
 
 t_data			*build_maj_s(void)

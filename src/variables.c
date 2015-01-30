@@ -34,13 +34,13 @@ void			process_format(const char *str)
 	t_data			*tmp;
 
 	RIGHT_I++;
-	LEFT_I++;
+	//LEFT_I = RIGHT_I;
 	init_info(&info);
 	find_flags(str, &info);
 	find_field_width(str, &info);
 	find_precision(str, &info);
 	find_format(str, &info);
 	tmp = build_output(&info);
-	list_pushback(&(OUTPUT), create_data(tmp->str, NULL));
+	list_pushback(&(OUTPUT), tmp);
 }
 
