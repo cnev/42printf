@@ -2,7 +2,7 @@
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
 
-char			*handle_sign(char *str, t_info *info)
+char				*do_sign(char *str, t_info *info)
 {
 	char			*tmp;
 

@@ -20,10 +20,10 @@ void			process_format(const char *str)
 
 	RIGHT_I += 2;
 	LEFT_I += 2;
+	init_info(&info);
 	find_flags(str, &info);
 	find_field_width(str, &info);
 	find_precision(str, &info);
-	find_length_mods(str, &info);
 	find_format(str, &info);
 	tmp = build_output(&info);
 	list_pushback(&(OUTPUT), tmp);

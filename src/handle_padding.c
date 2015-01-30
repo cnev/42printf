@@ -2,7 +2,7 @@
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
 
-char		*do_zero(char *str, t_info *info)
+static char			*do_zero(char *str, t_info *info)
 {
 	char			*tmp;
 	int				i;
@@ -20,7 +20,7 @@ char		*do_zero(char *str, t_info *info)
 	return (tmp);
 }
 
-char		*do_minus(char *str, t_info *info)
+static char			*do_minus(char *str, t_info *info)
 {
 	char			*tmp;
 	int				i;
@@ -38,7 +38,7 @@ char		*do_minus(char *str, t_info *info)
 	return (tmp);
 }
 
-char			*handle_sign(char *str, t_info *info)
+char				*do_padding(char *str, t_info *info)
 {
 	if (info->flag_minus && is_format(info->format,  "dDoOuUxX"))
 		return (do_minus(str, info));

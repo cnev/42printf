@@ -1,4 +1,5 @@
 #include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
 
 void				find_precision(const char *str, t_info *info)

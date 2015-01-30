@@ -1,4 +1,5 @@
 #include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 
 t_outputft			g_ft[40] = {
 	{"s", build_s},
@@ -34,7 +35,7 @@ t_outputft			g_ft[40] = {
 	{"llu", build_llu},
 	{"llx", build_llx},
 	{"llX", build_ll_maj_x},
-	{"jd", build_jd},
+	/*{"jd", build_jd},
 	{"jo", build_jo},
 	{"ju", build_ju},
 	{"jx", build_jx},
@@ -43,39 +44,41 @@ t_outputft			g_ft[40] = {
 	{"zo", build_zo},
 	{"zu", build_zu},
 	{"zx", build_zx},
-	{"zX", build_z_maj_x},
+	{"zX", build_z_maj_x},*/
 	{NULL, NULL}
 };
 
-static char		*select_output(t_info *info)
+static t_data		*select_output(t_info *info)
 {
 	int				i;
 
 	i = -1;
 	while (g_ft[++i].f)
 	{
-		if (!ft_strcmp(g_ft[i], info->format))
+		if (!ft_strcmp(g_ft[i].format, info->format))
 			return (g_ft[i].f());
 	}
 	return (NULL);
 }
 
-char			*modify_output(char *str, t_info *info)
+static t_data		*modify_output(t_data *data, t_info *info)
 {
 	char			*tmp;
 
-	tmp = do_precision(str, info);
+	tmp = do_precision(data->str, info);
 	tmp = do_sharp(tmp, info);
 	tmp = do_sign(tmp, info);
 	tmp = do_padding(tmp, info);
-	return (tmp);
+	free(data->str);
+	data->str = tmp;
+	return (data);
 }
 
-char			*build_output(t_info *info)
+t_data				*build_output(t_info *info)
 {
-	char			*var;
+	t_data			*var;
 
-	if (!(var = select_output))
+	if (!(var = select_output(info)))
 		return (NULL);
 	return (modify_output(var, info));
 }

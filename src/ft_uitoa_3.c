@@ -1,6 +1,7 @@
 #include "../include/ft_printf.h"
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
+#include <inttypes.h>
 
 static int		int_len(intmax_t val)
 {

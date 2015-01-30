@@ -7,12 +7,8 @@
 # define TRUE		1
 # define FALSE		0
 # include <wchar.h>
-
-typedef struct		s_list
-{
-	void			*data;
-	struct s_list	*next;
-}					t_list;
+# include <stdint.h>
+# include "../ft_list/ft_list.h"
 
 typedef struct		s_glob
 {
@@ -44,7 +40,7 @@ typedef struct		s_data
 typedef struct		s_outputft
 {
 	char			*format;
-	char			(*f)(void);
+	t_data			*(*f)(void);
 }					t_outputft;
 
 /*
@@ -105,9 +101,7 @@ char				*ft_uitoa_intmax_t(intmax_t val);
 /*
 ** handle_padding.c
 */
-char				*do_zero(char *str, t_info *info);
-char				*do_minus(char *str, t_info *info);
-char				*handle_sign(char *str, t_info *info);
+char				*do_padding(char *str, t_info *info);
 
 /*
 ** handle_precision.c
@@ -122,7 +116,7 @@ char				*do_sharp(char *str, t_info *info);
 /*
 ** handle_sign.c
 */
-char				*handle_sign(char *str, t_info *info);
+char				*do_sign(char *str, t_info *info);
 
 /*
 ** hexa_string_1.c
@@ -228,8 +222,7 @@ t_data				*build_ll_maj_x(void);
 /*
 ** output_main.c
 */
-char				*modify_output(char *str, t_info *info);
-char				*build_output(t_info *info);
+t_data				*build_output(t_info *info);
 
 /*
 ** precision.c

@@ -1,51 +1,51 @@
 #include "../include/ft_printf.h"
 
-t_data			*build_hhd(void)
+t_data				*build_hhd(void)
 {
-	char			val;
+	int				val;
 	char			*tmp;
 
-	val = va_arg(VARS, char);
+	val = va_arg(VARS, int);
 	tmp = ft_itoa((int)val);
 	return (create_data(tmp, NULL));
 }
 
-t_data			*build_hho(void)
+t_data				*build_hho(void)
 {
-	char			val;
+	int				val;
 	char			*tmp;
 
-	val = va_arg(VARS, char);
+	val = va_arg(VARS, int);
 	tmp = octal_string((unsigned int)val);
 	return (create_data(tmp, NULL));
 }
 
-t_data			*build_hhu(void)
+t_data				*build_hhu(void)
 {
-	char			val;
+	int				val;
 	char			*tmp;
 
-	val = va_arg(VARS, char);
+	val = va_arg(VARS, int);
 	tmp = ft_uitoa((unsigned int)val);
 	return (create_data(tmp, NULL));
 }
 
-t_data			*build_hhx(void)
+t_data				*build_hhx(void)
 {
-	char			val;
+	int				val;
 	char			*tmp;
 
-	val = va_arg(VARS, char);
+	val = va_arg(VARS, int);
 	tmp = hexa_string((unsigned int)val, FALSE);
 	return (create_data(tmp, NULL));
 }
 
-t_data			*build_hh_maj_x(void)
+t_data				*build_hh_maj_x(void)
 {
-	char			val;
+	int				val;
 	char			*tmp;
 
-	val = va_arg(VARS, char);
+	val = va_arg(VARS, int);
 	tmp = hexa_string((unsigned int)val, FALSE);
 	return (create_data(tmp, NULL));
 }
