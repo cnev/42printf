@@ -1,0 +1,48 @@
+#include "../include/ft_printf.h"
+#include "../libft/include/libft.h"
+#include <stdlib.h>
+
+char		*do_zero(char *str, t_info *info)
+{
+	char			*tmp;
+	int				i;
+
+	if (precision <= 0 || info->width < ft_strlen(str))
+		return (str);
+	if (!(tmp = (char *)malloc(sizeof(char) * (1 + info->width))))
+		return (NULL);
+	i = -1;
+	while (++i < info->width - ft_strlen(str))
+		tmp[i] = '0';
+	ft_strcpy(tmp + info->width - ft_strlen(str), str);
+	tmp[info->width] = '\0';
+	free(str);
+	return (tmp);
+}
+
+char		*do_minus(char *str, t_info *info)
+{
+	char			*tmp;
+	int				i;
+
+	if (info->width < ft_strlen(str))
+		return (str);
+	if (!(tmp = (char *)malloc(sizeof(char) * (1 + info->width))))
+		return (NULL);
+	ft_strcpy(tmp, str);
+	i = ft_strlen(str) - 1;
+	while (++i < info->width)
+		tmp[i] = ' ';
+	tmp[info->width] = '\0';
+	free(str);
+	return (tmp);
+}
+
+char			*handle_sign(char *str, t_info *info)
+{
+	if (info->flag_minus && is_format(info->format,  "dDoOuUxX"))
+		return (do_minus(str, info));
+	if (info->flag_zero)
+		return (do_zero(str, info));
+	return (str);
+}

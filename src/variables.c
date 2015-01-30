@@ -13,7 +13,7 @@ static void		init_info(t_info *info)
 void			process_format(const char *str)
 {
 	t_info			info;
-	char			*tmp;
+	t_data			*tmp;
 
 	RIGHT_I += 2;
 	LEFT_I += 2;
