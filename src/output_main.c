@@ -11,6 +11,7 @@ t_outputft			g_ft[40] = {
 	{"o", build_o},
 	{"u", build_u},
 	{"x", build_x},
+	{"%", build_pct},
 	{"D", build_maj_d},
 	{"O", build_maj_o},
 	{"U", build_maj_u},

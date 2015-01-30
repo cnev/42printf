@@ -14,7 +14,7 @@ char		*do_sharp(char *str, t_info *info)
 		free(str);
 		return (tmp);
 	}
-	if (is_format(info->format, "x") && equals_zero(str))
+	if (is_format(info->format, "xp") && equals_zero(str))
 	{
 		tmp = ft_strjoin("0x", str);
 		free(str);
