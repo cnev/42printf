@@ -1,5 +1,4 @@
 #include "../include/ft_printf.h"
-#include "../libft/include/libft.h"
 
 int				equals_zero(char *str)
 {

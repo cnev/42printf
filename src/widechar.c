@@ -1,4 +1,6 @@
-size_t			*ft_wcstrlen(wchar_t *str)
+#include <wchar.h>
+
+size_t			ft_wcstrlen(wchar_t *str)
 {
 	int				i;
 

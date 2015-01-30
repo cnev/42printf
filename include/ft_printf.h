@@ -6,12 +6,19 @@
 # define VARS		(get_glob(0))->vars
 # define TRUE		1
 # define FALSE		0
+# include <wchar.h>
+
+typedef struct		s_list
+{
+	void			*data;
+	struct s_list	*next;
+}					t_list;
 
 typedef struct		s_glob
 {
-	unsigned int	left_i = 0;
-	unsigned int	right_i = 0;
-	t_list			*list = 0;
+	unsigned int	left_i;
+	unsigned int	right_i;
+	t_list			*list;
 	va_list			vars;
 }					t_glob;
 
@@ -27,22 +34,48 @@ typedef struct		s_info
 	char			format[4];
 }					t_info;
 
-struct
-type;
-void*
-
+typedef struct		s_data
+{
+	int				is_wchar;
+	char			*str;
+	wchar_t			*w_str;
+}					t_data;
 
 typedef struct		s_outputft
 {
 	char			*format;
-	char			*f(void);
+	char			(*f)(void);
 }					t_outputft;
+
+/*
+** data.c
+*/
+t_data				*create_data(char *str, wchar_t *w_str);
+
+/*
+** equals_zero.c
+*/
+int					equals_zero(char *str);
+
+/*
+** ft_itoa.c
+*/
+char				*ft_itoa(int val);
 
 /*
 ** ft_printf.c
 */
 int					ft_printf(const char* str, ...);
 
+/*
+** ft_strrev.c
+*/
+char				*ft_strrev(char *str);
+
+/*
+** is_format.c
+*/
+int					is_format(char *format, char *possibles);
 /*
 ** variables.c
 */
@@ -77,5 +110,16 @@ void				find_format(const char *str, t_info *info);
 ** output_main.c
 */
 char				*build_output(t_info *info);
+
+/*
+** singleton.c
+*/
+t_glob				*get_glob(int mode);
+
+/*
+** widechar.c
+*/
+size_t				ft_wcstrlen(wchar_t *str);
+
 
 #endif

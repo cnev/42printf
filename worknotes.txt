@@ -56,3 +56,6 @@ RESTE A FAIRE
 	fonctions liste
 	detection du format
 	lengthmod j et z
+	INTEGRER CES PUTAINS DE LISTES A NOTRE LIBFT BORDER DE MERDE ON EN A MARRE
+	ET FT_STRREV
+	%p

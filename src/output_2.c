@@ -1,9 +1,4 @@
-/*
-	{"d", build_d},
-	{"o", build_o},
-	{"u", build_u},
-	{"x", build_x},
-*/
+#include "../include/ft_printf.h"
 
 t_data			*build_d(void)
 {

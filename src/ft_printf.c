@@ -1,4 +1,5 @@
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 #include <stdarg.h>
 
 int				ft_printf(const char* str, ...)
@@ -6,7 +7,7 @@ int				ft_printf(const char* str, ...)
 	t_glob			*glob;
 	int				printed;
 
-	glob = get_glob();
+	glob = get_glob(0);
 	va_start(VARS, str);
 	while (str[LEFT_I])
 	{

@@ -1,3 +1,5 @@
+#include "../include/ft_printf.h"
+
 static int			is_flag(char c, t_info *info)
 {
 	if (c == ' ')
@@ -21,5 +23,5 @@ void				find_flags(const char *str, t_info *info)
 	{
 		LEFT_I++;
 		RIGHT_I++;
-	}	
+	}
 }

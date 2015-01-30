@@ -1,5 +1,5 @@
 #include "../include/ft_printf.h"
-#include "../libft/include/libft.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
 
 char		*do_zero(char *str, t_info *info)
@@ -7,12 +7,12 @@ char		*do_zero(char *str, t_info *info)
 	char			*tmp;
 	int				i;
 
-	if (precision <= 0 || info->width < ft_strlen(str))
+	if (info->precision <= 0 || info->width < (int)ft_strlen(str))
 		return (str);
 	if (!(tmp = (char *)malloc(sizeof(char) * (1 + info->width))))
 		return (NULL);
 	i = -1;
-	while (++i < info->width - ft_strlen(str))
+	while (++i < (int)(info->width - ft_strlen(str)))
 		tmp[i] = '0';
 	ft_strcpy(tmp + info->width - ft_strlen(str), str);
 	tmp[info->width] = '\0';
@@ -25,7 +25,7 @@ char		*do_minus(char *str, t_info *info)
 	char			*tmp;
 	int				i;
 
-	if (info->width < ft_strlen(str))
+	if (info->width < (int)ft_strlen(str))
 		return (str);
 	if (!(tmp = (char *)malloc(sizeof(char) * (1 + info->width))))
 		return (NULL);

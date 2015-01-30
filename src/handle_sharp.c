@@ -1,5 +1,5 @@
 #include "../include/ft_printf.h"
-#include "../libft/include/libft.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
 
 char		*do_sharp(char *str, t_info *info)

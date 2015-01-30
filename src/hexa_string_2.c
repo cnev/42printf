@@ -1,23 +1,6 @@
-#include <stdio.h>
-#include <string.h>
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
-
-static char		*ft_strrev(char *str)
-{
-	int				i;
-	int				len;
-	char			tmp;
-
-	i = -1;
-	len = strlen(str);
-	while (++i < --len)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-	}
-	return (str);
-}
 
 static int		int_len(size_t val)
 {
@@ -44,7 +27,6 @@ static char		hex_char(size_t val, int is_maj)
 
 char			*hexa_string_size_t(size_t val, int is_maj)
 {
-	int				len;
 	char			*tmp;
 	int				i;
 
@@ -61,18 +43,4 @@ char			*hexa_string_size_t(size_t val, int is_maj)
 	}
 	tmp[i] = '\0';
 	return (ft_strrev(tmp));
-}
-
-int main(int ac, char **av)
-{
-	printf("MAX INT : %s\n", hexa_string(4294967295, 0));
-	printf("really is :%x\n", 4294967295);
-	printf("MAX INT : %s\n", hexa_string(4294967295, 1));
-	printf("really is :%X\n", 4294967295);
-	printf("zero : %s\n", hexa_string(20, 1));
-	printf("really is :%X\n", 20);
-	printf("seven : %s\n", hexa_string(100, 1));
-	printf("really is :%X\n", 100);
-	char c = getchar();
-	return (0);
 }

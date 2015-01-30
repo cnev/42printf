@@ -1,23 +1,6 @@
-#include <stdio.h>
-#include <string.h>
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
-
-static char		*ft_strrev(char *str)
-{
-	int				i;
-	int				len;
-	char			tmp;
-
-	i = -1;
-	len = strlen(str);
-	while (++i < --len)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-	}
-	return (str);
-}
 
 static int		int_len(unsigned int val)
 {
@@ -34,7 +17,6 @@ static int		int_len(unsigned int val)
 
 char			*ft_uitoa(unsigned int val)
 {
-	int				len;
 	char			*tmp;
 	int				i;
 
@@ -50,14 +32,4 @@ char			*ft_uitoa(unsigned int val)
 	}
 	tmp[i] = '\0';
 	return (ft_strrev(tmp));
-}
-
-int main(int ac, char **av)
-{
-	printf("MAX INT : %s\n", ft_uitoa(4294967295));
-	printf("is really: %u\n", 4294967295);
-	printf("MAX INT : %s\n", ft_uitoa(1234));
-	printf("is really: %u\n", 1234);
-	char c = getchar();
-	return (0);
 }

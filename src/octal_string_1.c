@@ -1,23 +1,6 @@
-#include <stdio.h>
-#include <string.h>
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
 #include <stdlib.h>
-
-static char		*ft_strrev(char *str)
-{
-	int				i;
-	int				len;
-	char			tmp;
-
-	i = -1;
-	len = strlen(str);
-	while (++i < --len)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-	}
-	return (str);
-}
 
 static int		int_len(unsigned int val)
 {
@@ -34,7 +17,6 @@ static int		int_len(unsigned int val)
 
 char			*octal_string(unsigned int val)
 {
-	int				len;
 	char			*tmp;
 	int				i;
 	const char		table[] = "01234567";
@@ -51,16 +33,4 @@ char			*octal_string(unsigned int val)
 	}
 	tmp[i] = '\0';
 	return (ft_strrev(tmp));
-}
-
-int main(int ac, char **av)
-{
-	printf("MAX INT : %s\n", octal_string(4294967295));
-	printf("really is :%o\n", 4294967295);
-	printf("zero : %s\n", octal_string(20));
-	printf("really is :%o\n", 20);
-	printf("seven : %s\n", octal_string(100));
-	printf("really is :%o\n", 100);
-	char c = getchar();
-	return (0);
 }

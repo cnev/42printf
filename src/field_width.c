@@ -1,3 +1,7 @@
+#include "../include/ft_printf.h"
+#include "../libft/includes/libft.h"
+#include <stdlib.h>
+
 void			find_field_width(const char *str, t_info *info)
 {
 	char			*field_width;
@@ -8,5 +12,5 @@ void			find_field_width(const char *str, t_info *info)
 	field_width = ft_strncpy(field_width, str + LEFT_I, RIGHT_I - LEFT_I);
 	LEFT_I = RIGHT_I;
 	info->width = ft_atoi(field_width);
-	free (field_width);
+	free(field_width);
 }
